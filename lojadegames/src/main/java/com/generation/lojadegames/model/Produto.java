@@ -35,7 +35,7 @@ public class Produto {
 	private BigDecimal valor;
 	
 	@ManyToOne
-	@JsonIgnoreProperties("produto")
+	@JsonIgnoreProperties("produtos")
 	private Categoria categoria;
 
 
