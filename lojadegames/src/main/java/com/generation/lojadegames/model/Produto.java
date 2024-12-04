@@ -1,5 +1,7 @@
 package com.generation.lojadegames.model;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -27,7 +29,7 @@ public class Produto {
 	
 	
 	@NotNull(message = "O Atributo valor deve ser preenchido")
-	private float valor;
+	private BigDecimal valor;
 	
 	
 	private long categoria;
@@ -63,12 +65,12 @@ public class Produto {
 	}
 
 
-	public float getValor() {
+	public BigDecimal getValor() {
 		return valor;
 	}
 
 
-	public void setValor(float valor) {
+	public void setValor(BigDecimal valor) {
 		this.valor = valor;
 	}
 

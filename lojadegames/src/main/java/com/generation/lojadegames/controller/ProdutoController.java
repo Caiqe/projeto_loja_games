@@ -1,5 +1,6 @@
 package com.generation.lojadegames.controller;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -65,5 +66,15 @@ public class ProdutoController {
 		}
 		
 		produtoRepository.deleteById(id);
+	}
+	
+	@GetMapping("/nome/{nome}")
+	public ResponseEntity<List<Produto>> getByNome(@PathVariable String nome){
+		return ResponseEntity.ok(produtoRepository.findAllByNomeContainingIgnoreCase(nome));
+	}
+	
+	@GetMapping("/valormenor/{valor}")
+	public ResponseEntity<List<Produto>> getValorMenorQue(@PathVariable BigDecimal valor){
+		return ResponseEntity.ok(produtoRepository.findAllByValorLessThanEqual(valor));
 	}
 }
